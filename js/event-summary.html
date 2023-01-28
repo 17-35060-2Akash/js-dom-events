@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Summary</title>
+</head>
+
+<body>
+    <h1>Final Dom Event Handlers</h1>
+    <h3 id="handler-status">DEFAULT TEXT</h3>
+    <p id="default-text">Default Input Text</p>
+    <input id="input-field" name="" type="text" value=""> <button id="btn-update">Update</button>
+    <br>
+    <br>
+    <button onclick="handleOnClick()">Handle Event by Add on Click Function</button>
+    <button id="event-listener">Handle Event by addEventListener</button>
+    <script>
+        function handleOnClick() {
+            document.getElementById('handler-status').innerText = "Hello Akash!";
+            document.getElementById('handler-status').style.backgroundColor = 'orange';
+            document.getElementById('handler-status').style.textAlign = 'center';
+        }
+        document.getElementById('event-listener').addEventListener('click', function () {
+            document.getElementById('handler-status').innerText = "Bye Akash!";
+        })
+
+        document.getElementById('btn-update').addEventListener('click', function () {
+            document.getElementById('default-text').innerText = document.getElementById('input-field').value;
+            document.getElementById('input-field').value = "";
+        })
+
+    </script>
+</body>
+
+</html>
